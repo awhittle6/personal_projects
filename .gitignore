@@ -1,0 +1,64 @@
+# === Rust & Cargo ===
+**/target/
+**/Cargo.lock
+**/Cargo.toml.orig
+
+# If you use sccache or other build caches
+.sccache/
+
+# === Binaries ===
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# === IDEs & Editors ===
+
+# VSCode
+.vscode/
+**/.vscode/
+
+# IntelliJ Rust / CLion
+.idea/
+**/.idea/
+*.iml
+
+# Sublime
+*.sublime-workspace
+*.sublime-project
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# Vim
+*.swp
+*.swo
+*.un~
+.session
+
+# === OS Specific ===
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# === Git backup ===
+*.orig
+*.rej
+
+# === Misc ===
+*.log
+*.tmp
+
