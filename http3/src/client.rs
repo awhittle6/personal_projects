@@ -66,7 +66,7 @@ async fn main() -> Result<()> {
     let (mut driver, mut send_request) = h3::client::new(h3_quinn::Connection::new(connection)).await?;
     let drive = async move {
         Err::<(), ConnectionError>(future::poll_fn(|cx| driver.poll_close(cx)).await)
-    };
+};          
 
     let request = async move {
         for path in ["/"] {
@@ -75,12 +75,11 @@ async fn main() -> Result<()> {
             stream.finish().await?;
             let response = stream.recv_response().await?;
             println!("{}: {}", path, response.status());
-
             while let Some(mut chunk) = stream.recv_data().await? {
                 tokio::io::stdout().write_all_buf(&mut chunk).await.unwrap();
             }
             println!();
-        }
+        } 
         Ok::<_, anyhow::Error>(())
     };
     let _ = tokio::join!(request, drive);
